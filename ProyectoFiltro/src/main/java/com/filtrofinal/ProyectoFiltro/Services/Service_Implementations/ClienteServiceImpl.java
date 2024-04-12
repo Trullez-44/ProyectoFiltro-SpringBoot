@@ -15,6 +15,7 @@ public class ClienteServiceImpl implements ClienteService {
     private final ClienteRepository clienteRepository;
     @Override
     public ClienteEntity save(ClienteEntity clienteEntity) {
+
         return clienteRepository.save(clienteEntity);
     }
 

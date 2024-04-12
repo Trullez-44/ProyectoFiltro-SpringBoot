@@ -1,9 +1,8 @@
 package com.filtrofinal.ProyectoFiltro.Controllers;
 
+import com.filtrofinal.ProyectoFiltro.DTO.InmuebleDTO;
 import com.filtrofinal.ProyectoFiltro.DTO.InmuebleVillaDTO;
-import com.filtrofinal.ProyectoFiltro.Repositories.Entities.ClienteEntity;
 import com.filtrofinal.ProyectoFiltro.Repositories.Entities.InmuebleEntity;
-import com.filtrofinal.ProyectoFiltro.Services.ClienteService;
 import com.filtrofinal.ProyectoFiltro.Services.InmuebleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -12,25 +11,26 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("Inmuebles")
+@RequestMapping("inmuebles")
 @RequiredArgsConstructor
 public class InmuebleController {
 
     private final InmuebleService inmuebleService;
 
     @PostMapping()
-    public InmuebleVillaDTO save(@Validated @RequestBody InmuebleEntity inmuebleEntity) {
-        return inmuebleService.save(inmuebleEntity);
+    public InmuebleVillaDTO saveVilla(@Validated @RequestBody InmuebleVillaDTO inmuebleVillaDTO) {
+        return inmuebleService.saveVilla(inmuebleVillaDTO);
     }
 
-    @GetMapping
-    public List<ClienteEntity> getAll() {
-        return inmuebleService.getAll();
+    @GetMapping("/villas")
+    public List<InmuebleVillaDTO> getAllVillas() {
+        return inmuebleService.getAllVillas("VILLA");
     }
 
     @GetMapping("/{id}")
-    public ClienteEntity getById(@PathVariable Integer id) {
-        return clienteService.getById(id);
+    public InmuebleDTO getById(@PathVariable Integer id) {
+
+        return inmuebleService.getById(id);
     }
 
     @DeleteMapping("/{id}")

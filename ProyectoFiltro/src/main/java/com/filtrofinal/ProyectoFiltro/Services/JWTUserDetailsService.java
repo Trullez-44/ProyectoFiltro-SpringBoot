@@ -1,6 +1,6 @@
 package com.filtrofinal.ProyectoFiltro.Services;
 
-import com.project.ong_management.domain.repository.UserRepository;
+import com.filtrofinal.ProyectoFiltro.Repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;

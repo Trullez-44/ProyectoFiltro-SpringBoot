@@ -16,6 +16,8 @@ public class InmuebleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "inmueble_id")
     private Integer inmueble_id;
+    @Column(name = "tipo_inmueble")
+    private String tipo;
     @Column(name = "venta", nullable = false)
     private boolean venta;
     @Column(name = "alquiler", nullable = false)
@@ -30,14 +32,7 @@ public class InmuebleEntity {
     private String nombre_propietario;
     @Column(name = "telefono_cliente", nullable = false)
     private String telefono_cliente;
-    @Column(name = "villa_id")
-    private Integer villa_id;
-    @Column(name = "local_id")
-    private Integer local_id;
-    @Column(name = "casa_id")
-    private Integer casa_id;
-    @Column(name = "piso_id")
-    private Integer piso_id;
-    @Column(name = "oficina_id", nullable = false)
-    private Integer oficina_id;
+    @OneToOne
+    @JoinColumn(name = "villa", referencedColumnName = "villa_id")
+    private Villa villa_id;
 }
