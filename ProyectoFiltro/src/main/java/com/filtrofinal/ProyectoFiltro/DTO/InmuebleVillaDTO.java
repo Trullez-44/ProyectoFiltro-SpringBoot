@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 public class InmuebleVillaDTO {
 
+    private Integer inmueble_id;
     private boolean venta;
     private String tipo;
     private boolean alquiler;
