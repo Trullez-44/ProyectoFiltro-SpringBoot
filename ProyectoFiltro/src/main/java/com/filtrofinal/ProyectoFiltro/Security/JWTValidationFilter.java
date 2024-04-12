@@ -1,5 +1,6 @@
 package com.filtrofinal.ProyectoFiltro.Security;
 
+
 import com.filtrofinal.ProyectoFiltro.Services.JWTService;
 import com.filtrofinal.ProyectoFiltro.Services.JWTUserDetailsService;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -14,6 +15,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+
 
 import java.io.IOException;
 import java.util.Objects;
@@ -32,8 +34,8 @@ public class JWTValidationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
-                                                   HttpServletResponse response,
-                                                   FilterChain filterChain) throws ServletException, IOException {
+                                    HttpServletResponse response,
+                                    FilterChain filterChain) throws ServletException, IOException {
         final var requestTokenHeader = request.getHeader(AUTHORIZATION_HEADER);
         String username = null;
         String jwt = null;

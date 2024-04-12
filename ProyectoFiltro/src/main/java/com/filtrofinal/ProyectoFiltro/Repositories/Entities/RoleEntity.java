@@ -3,6 +3,8 @@ package com.filtrofinal.ProyectoFiltro.Repositories.Entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.math.BigInteger;
+
 @Entity
 @Table(name = "roles")
 @Data

@@ -14,6 +14,5 @@ public class InmuebleVillaDTO {
     private String n_referencia;
     private String nombre_propietario;
     private String telefono_cliente;
-    private Integer villa_id;
     private Villa villa;
 }

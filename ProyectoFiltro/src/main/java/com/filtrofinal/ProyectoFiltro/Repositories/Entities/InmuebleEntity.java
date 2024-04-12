@@ -32,6 +32,7 @@ public class InmuebleEntity {
     private String nombre_propietario;
     @Column(name = "telefono_cliente", nullable = false)
     private String telefono_cliente;
+//    RELACIONES
     @OneToOne
     @JoinColumn(name = "villa", referencedColumnName = "villa_id")
     private Villa villa_id;

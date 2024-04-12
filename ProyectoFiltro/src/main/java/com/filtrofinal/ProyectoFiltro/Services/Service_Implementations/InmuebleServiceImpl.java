@@ -29,7 +29,6 @@ public class InmuebleServiceImpl implements InmuebleService {
     public InmuebleVillaDTO saveVilla(InmuebleVillaDTO inmuebleVillaDTO) {
         InmuebleEntity inmuebleEntity = inmuebleVillaConvert.convertToEntity(inmuebleVillaDTO);
 //        Villa villa = villaRepository.findById(inmuebleVillaDTO.getVilla_id());
-
         inmuebleRepository.save(inmuebleEntity);
 
         return inmuebleVillaConvert.convertToDTO(inmuebleEntity);
